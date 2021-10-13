@@ -15,6 +15,7 @@ body {
     --accent: #70C0C4;
     --second-accent: #B83EAC;
     --section-gray: #EFEFEF;
+    --corp-work-height: 730px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 14px;
@@ -583,6 +584,89 @@ section .wrapper {
     margin-top: 50px;
 }
 
+/* ------ Corporate work section ------ */
+
+.corporate-work {
+    position: relative;
+    padding: 0;
+}
+
+.corporate-work .banner {
+    position: absolute;
+    height: var(--corp-work-height);
+}
+
+.corporate-work .wrapper {
+    position: relative;
+    margin-top: unset;
+    padding-top: 100px;
+}
+
+.corporate-work .wrapper p {
+    max-width: 475px;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 35px;
+    color: #fff;
+}
+
+.corporate-work .wrapper h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.corporate-work .wrapper h1 span {
+    color: var(--accent);
+}
+
+.corporate-work .wrapper .advantages {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+}
+
+.corporate-work .wrapper .advantages .card {
+    width: 355px;
+    height: 425px;
+    background: var(--accent);
+    border-radius: 22px;
+    padding: 24px 32px;
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.05);
+}
+
+.corporate-work .wrapper .advantages .card.dark {
+    background: #6E6E6E;
+}
+
+.corporate-work .wrapper .advantages .card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: left;
+    line-height: 35px;
+}
+
+.corporate-work .wrapper .advantages .card .line {
+    width: 175px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.corporate-work .wrapper .advantages .card p {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+    color: #fff;
+}
+
 /* ------ About app section ------ */
 
 .about-app .wrapper {
@@ -772,6 +856,45 @@ section .wrapper {
     width: inherit;
 }
 
+/* ------ Career section ------ */
+
+.career {
+    overflow: hidden;
+}
+
+.career .wrapper .group h1 {
+    width: 200%;
+    font-size: 121px;
+    font-weight: 600;
+    color: rgba(112, 192, 196, .27);
+}
+
+.career .wrapper .group p {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 41px;
+    margin-left: 60px;
+}
+
+.career .wrapper .group.first {
+    margin-bottom: 40px;
+}
+
+.career .wrapper .group.first p {
+    margin-top: -65px;
+}
+
+.career .wrapper .group.second p {
+    margin-top: -50px;
+}
+
+.career .wrapper button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+}
+
 /* ------ Partners section ------ */
 
 .partners .wrapper .swiper .swiper-slide {
@@ -848,10 +971,59 @@ hr {
     color: var(--accent);
 }
 
+@media(max-width: 1250px) {
+    .career .wrapper .group h1 {
+        font-size: 81px;
+    }
+
+    .career .wrapper .group p {
+        font-size: 20px;
+        line-height: 35px;
+        margin-left: 43px;
+    }
+
+    .career .wrapper .group.first p {
+        margin-top: -49px;
+    }
+
+    .career .wrapper .group.second p {
+        margin-top: -37px;
+    }
+}
+
 @media(max-width: 1200px) {
     .about-company .wrapper .left-block .img-box {
         width: 460px;
         height: 290px;
+    }
+
+    .corporate-work .wrapper {
+        padding-top: 70px;
+    }
+
+    .corporate-work .banner {
+        height: 640px;
+    }
+
+    .corporate-work .wrapper .advantages {
+        margin-top: 80px;
+    }
+
+    .corporate-work .wrapper .advantages .card {
+        width: 285px;
+        height: 385px;
+    }
+
+    .corporate-work .wrapper .advantages .card h2 {
+        font-size: 20px;
+    }
+
+    .corporate-work .wrapper .advantages .card .line {
+        margin: 15px 0;
+    }
+
+    .corporate-work .wrapper .advantages .card p {
+        font-size: 14px;
     }
 }
 
@@ -962,6 +1134,35 @@ hr {
     }
 }
 
+@media(max-width: 970px) {
+    .corporate-work .banner {
+        display: none;
+    }
+
+    .corporate-work .wrapper p {
+        color: #000;
+    }
+
+    .corporate-work .wrapper h1 {
+        color: #000;
+    }
+
+    .corporate-work .wrapper .advantages {
+        padding: 0 80px;
+        flex-direction: column;
+    }
+
+    .corporate-work .wrapper .advantages .card {
+        width: 100%;
+        height: unset;
+        margin-bottom: 50px;
+    }
+    
+    .corporate-work .wrapper .advantages .card h2 {
+        display: inline-block;
+    }
+}
+
 @media(max-width: 940px) {
     .banner {
         height: 360px;
@@ -993,6 +1194,25 @@ hr {
 
     .about-app .left-block .advantages {
         width: 550px;
+    }
+
+    .career .wrapper .group h1 {
+        font-size: 42px;
+        color: var(--accent);
+    }
+
+    .career .wrapper .group p {
+        font-size: 18px;
+        line-height: 32px;
+        margin-left: 26px;
+    }
+
+    .career .wrapper .group.first p {
+        margin-top: unset;
+    }
+
+    .career .wrapper .group.second p {
+        margin-top: unset;
     }
 }
 
@@ -1036,6 +1256,20 @@ hr {
     .about-company .wrapper .left-block .img-box {
         width: 132%;
         height: 335px;
+    }
+
+    .career .wrapper .group h1 {
+        font-size: 36px;
+    }
+
+    .career .wrapper .group p {
+        font-size: 14px;
+        line-height: 26px;
+        margin-left: unset;
+    }
+
+    .career .wrapper .group.first {
+        margin-bottom: 30px;
     }
 }
 
@@ -1081,6 +1315,10 @@ hr {
         width: unset;
         font-size: 24px;
     }
+
+    .corporate-work .wrapper .advantages {
+        padding: 0;
+    }
 }
 
 @media(max-width: 500px) {
@@ -1107,9 +1345,17 @@ hr {
     .merchandizing p {
         font-size: 14px;
     }
+
+    .career .wrapper .group h1 {
+        font-size: 24px;
+    }
 }
 
 @media(max-width: 420px) {
+    section .subtitle {
+        font-size: 15px;
+    }
+
     .menu-button .close {
         display: none;
     }
@@ -1169,11 +1415,27 @@ hr {
     .contact-us .wrapper .right-block .google-maps {
         height: 230px;
     }
+
+    .corporate-work .wrapper {
+        padding-top: 40px;
+    }
+
+    .corporate-work .wrapper p {
+        font-size: 24px;
+    }
+
+    .corporate-work .wrapper h1 {
+        font-size: 24px;
+    }
 }
 
 @media(max-width: 330px) {
     .banner .wrapper {
         margin-top: -266px;
+    }
+
+    .career .wrapper .group h1 {
+        font-size: 22px;
     }
 }
 
