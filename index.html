@@ -5,12 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketica | Merchendize Agency</title>
+    <link rel="shortcut icon" href="img/marketica.ico" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="modal-dialog career">
+        <h2>Форма соискателя</h2>
+        <div class="close">
+            <img src="img/close_cross.png" alt="close button">
+        </div>
+        <form action="https://formsubmit.co/Director@marketica.ru" method="POST" enctype="multipart/form-data" class="contact-form" id="contact-form">
+            <input type="hidden" name="_cc" value="milinkov.nik@gmail.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Новое резюме на сайте marketica.com">
+            <div class="input-box name">
+                <label for="fio">ФИО*</label>
+                <input class="default-input" type="text" name="fio" id="username" placeholder="Власов Дмитрий Олегович" required>
+            </div>
+            <div class="input-box phone">
+                <label for="usertel">Номер телефона*</label>
+                <input class="default-input" type="tel" name="usertel" id="usertel_career" placeholder="8 (981) 896-13-79" required>
+            </div>
+            <div class="input-box email">
+                <label for="email">Эл. почта*</label>
+                <input class="default-input" type="email" name="email" id="email" placeholder="Director@marketica.ru" required>
+            </div>
+            <div class="input-box file-upload">
+                <label for="file">Прикрепить файл-резюме (.doc, .docx, .pdf)</label>
+                <div class="pseudo-input">
+                    <input type="file" id="file" name="file" accept=".pdf, .docx, .doc">
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="border close" type="reset">Закрыть</button>
+                <button class="filled" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-dialog tender">
+        <h2>Пригласить в тендер</h2>
+        <div class="close">
+            <img src="img/close_cross.png" alt="close button">
+        </div>
+        <form action="https://formsubmit.co/Director@marketica.ru" method="POST" enctype="multipart/form-data" class="contact-form" id="contact-form">
+            <input type="hidden" name="_cc" value="milinkov.nik@gmail.com">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Новая заявка на тендер на сайте marketica.com">
+            <div class="input-box name">
+                <label for="fio">ФИО*</label>
+                <input class="default-input" type="text" name="fio" id="username" placeholder="Власов Дмитрий Олегович" required>
+            </div>
+            <div class="input-box phone">
+                <label for="usertel">Номер телефона*</label>
+                <input class="default-input" type="tel" name="usertel" id="usertel_tender" placeholder="8 (981) 896-13-79" required>
+            </div>
+            <div class="input-box email">
+                <label for="email">Эл. почта*</label>
+                <input class="default-input" type="email" name="email" id="email" placeholder="Director@marketica.ru" required>
+            </div>
+            <div class="input-box file-upload">
+                <label for="file">Прикрепить файл-бриф (.doc, .docx, .pdf)</label>
+                <div class="pseudo-input">
+                    <input type="file" id="file" name="file" accept=".pdf, .docx, .doc">
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="border close" type="reset">Закрыть</button>
+                <button class="filled" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
     <header class="header">
         <div class="top-hat">
             <div class="wrapper">
@@ -41,11 +108,10 @@
                     <li><a href="#top">Главная</a></li>
                     <li><a href="#about-company">О компании</a></li>
                     <li><a href="#merchandizing">Услуги</a></li>
-                    <li><a href="#partners">Наши клиенты</a></li>
-                    <li><a href="#about-app">Благодарности</a></li>
                     <li><a href="#corporate-work">Корпоративная культура</a></li>
-                    <li><a href="#career">Карьера</a></li>
                     <li><a href="#contact-us">Контакты</a></li>
+                    <li><a href="#career">Карьера</a></li>
+                    <li><a href="#partners">Наши клиенты</a></li>
                 </ul>
             </div>
         </nav>
@@ -141,7 +207,7 @@
                 <div class="right-block">
                     <div class="content">
                         <p>Компания Marketica продвигает бренды клиентов в торговых сетях с 2011 года. Изначально компания ставила цель - предоставить требуемый уровень сервиса в области торгового маркетинга в регионах. Устойчивое развитие компания получила благодаря выигрышной на фоне конкурентов ценовой политике и желанию большинства производителей оптимизировать расходы, сохраняя качество услуг в регионах...</p>
-                        <button class="filled">Подробнее</button>
+                        <a href="#contact-us"><button class="filled">Подробнее</button></a>
                     </div>
                     
                 </div>
@@ -202,7 +268,7 @@
                     </div>
                 </div>
             </div>
-            <button class="filled">Подробнее</button>
+            <a href="#contact-us"><button class="filled">Подробнее</button></a>
         </section>
 
         <a name="corporate-work"></a>
@@ -291,18 +357,21 @@
             </div>
             <div class="wrapper">
                 <div class="left-block">
-                    <form action="#" class="contact-form" id="contact-form">
+                    <form action="https://formsubmit.co/Director@marketica.ru" method="POST" class="contact-form" id="contact-form">
+                        <input type="hidden" name="_cc" value="milinkov.nik@gmail.com">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Новое сообщение на сайте marketica.com">
                         <div class="input-box name">
-                            <label for="">Имя*</label>
-                            <input class="default-input" type="text" name="username" id="username" placeholder="Дмитрий">
+                            <label for="name">Имя*</label>
+                            <input class="default-input" type="text" name="name" id="username" placeholder="Дмитрий" required>
                         </div>
                         <div class="input-box phone">
-                            <label for="">Номер телефона*</label>
-                            <input class="default-input" type="tel" name="usertel" id="usertel" placeholder="8 (981) 896-13-79">
+                            <label for="usertel">Номер телефона*</label>
+                            <input class="default-input" type="tel" name="usertel" id="usertel" placeholder="8 (981) 896-13-79" required>
                         </div>
                         <div class="input-box message">
-                            <label for="">Сообщение</label>
-                            <textarea class="large-input" type="text" name="textbox" id="textbox" placeholder="Введите сообщение..." cols="30" rows="10"></textarea>
+                            <label for="message">Сообщение</label>
+                            <textarea class="large-input" type="text" name="message" id="textbox" placeholder="Введите сообщение..." cols="30" rows="10"></textarea>
                         </div>
 
                         <div class="bottom">
@@ -335,7 +404,7 @@
                     <h1>Достойные условия.</h1>
                     <p>Стабильная работа и зарплата ждёт Вас <br> в нашем дружном коллективе!</p>
                 </div>
-                <button class="filled">Отправить заявку</button>
+                <button class="filled career-button">Отправить заявку</button>
             </div>
         </section>
 

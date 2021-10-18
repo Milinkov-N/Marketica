@@ -21,6 +21,10 @@ body {
     font-size: 14px;
 }
 
+.noscroll {
+    overflow: hidden;
+}
+
 a {
     color: #000;
 }
@@ -70,6 +74,12 @@ button.border {
     background: none;
     color: #000;
     border: 1px solid var(--accent);
+    transition: .2s all ease;
+}
+
+button.border:hover {
+    background: var(--accent);
+    color: #fff;
 }
 
 /* ------ Responsive sidebar button ------ */
@@ -307,6 +317,136 @@ section .wrapper {
 .phone-number img {
     width: 18px;
     margin-right: 5px;
+}
+
+.contact-form {
+    max-width: 474px;
+}
+
+.contact-form label {
+    color: #6E6E6E;
+    display: block;
+    margin-bottom: 18px;
+    font-size: 16px;
+}
+
+.contact-form input:required:focus:valid {
+    border: 1px solid #67f372;
+    box-shadow: unset;
+}
+
+.contact-form input:required:focus:invalid {
+    border: 1px solid #ff0000;
+    box-shadow: unset;
+}
+
+.contact-form .input-box {
+    margin-bottom: 30px;
+}
+
+.contact-form .default-input {
+    width: 100%;
+    height: 51px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    outline: none;
+    padding: 10px;
+    transition: all .2s ease;
+}
+
+.contact-form .large-input {
+    width: 100%;
+    height: 128px;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    transition: all .2s ease;
+}
+
+.contact-form .large-input:focus {
+    border: 1px solid #006eff;
+    box-shadow: unset;
+}
+
+.contact-form .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.contact-form .bottom button {
+    width: 195px;
+}
+
+/* ------ Modal dialog window ------ */
+
+.modal-dialog {
+    position: fixed;
+    top: -190%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 490px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 0 26px rgba(0, 0, 0, 0.05);
+    padding: 33px;
+    z-index: 99999;
+    transition: .5s top ease-in-out;
+}
+
+.modal-dialog.active {
+    top: 150px;
+}
+
+.modal-dialog h2 {
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.modal-dialog div.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 18px;
+    cursor: pointer;
+}
+
+.modal-dialog .close img {
+    width: inherit;
+}
+
+.modal-dialog .contact-form .pseudo-input {
+    width: 100%;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 7px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    outline: none;
+    padding: 10px;
+    transition: all .2s ease;
+}
+
+.modal-dialog .contact-form .bottom {
+    margin-top: 50px;
+}
+
+.modal-dialog .contact-form button {
+    height: 45px;
 }
 
 /* ------ HEADER ------ */
@@ -783,58 +923,6 @@ section .wrapper {
     margin-bottom: 45px;
 }
 
-.contact-us .wrapper .left-block .contact-form {
-    max-width: 474px;
-}
-
-.contact-us .wrapper .left-block .contact-form label {
-    color: #6E6E6E;
-    display: block;
-    margin-bottom: 18px;
-    font-size: 16px;
-}
-
-.contact-us .wrapper .left-block .contact-form .input-box {
-    margin-bottom: 30px;
-}
-
-.contact-us .wrapper .left-block .contact-form .default-input {
-    width: 100%;
-    height: 51px;
-    border: none;
-    border-radius: 7px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    outline: none;
-    padding: 10px;
-}
-
-.contact-us .wrapper .left-block .contact-form .large-input {
-    width: 100%;
-    height: 128px;
-    border: none;
-    border-radius: 7px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    resize: none;
-    outline: none;
-    padding: 10px;
-}
-
-.contact-us .wrapper .left-block .contact-form .bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.contact-us .wrapper .left-block .contact-form .bottom button {
-    width: 195px;
-}
-
 .contact-us .wrapper .right-block {
     display: flex;
     justify-content: center;
@@ -1230,28 +1318,6 @@ hr {
     }
 }
 
-@media(max-height: 815px) {
-    .sidebar .top .menu {
-        overflow: scroll;
-        height: 450px;
-        margin-top: 20px;
-    }
-
-    .sidebar .top .menu li {
-        width: 96%;
-    }
-}
-
-@media(max-height: 735px) {
-    .sidebar .top .menu {
-        height: 360px;
-    }
-
-    .sidebar .top .menu li {
-        margin-bottom: 5px;
-    }
-}
-
 @media(max-width: 700px) {
     .about-company .wrapper .left-block .img-box {
         width: 132%;
@@ -1281,12 +1347,6 @@ hr {
 
     .header .top-hat .wrapper .right-block {
         display: none;
-    }
-}
-
-@media(max-height: 650px) {
-    .sidebar .top .menu {
-        height: 290px;
     }
 }
 
@@ -1348,6 +1408,42 @@ hr {
 
     .career .wrapper .group h1 {
         font-size: 24px;
+    }
+
+    .modal-dialog {
+        width: 100%;
+        height: 100vh;
+        border-radius: unset;
+        padding: 15px;
+    }
+
+    .modal-dialog.active {
+        top: 0;
+    }
+
+    .modal-dialog h2 {
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+
+    .modal-dialog .contact-form label {
+        margin-bottom: 15px;
+    }
+
+    .modal-dialog .contact-form .input-box {
+        margin-bottom: 15px;
+    }
+
+    .modal-dialog .contact-form .default-input {
+        height: 47px;
+    }
+
+    .modal-dialog .contact-form .bottom {
+        margin-top: 35px;
+    }
+
+    .modal-dialog .contact-form .bottom button {
+        width: 140px;
     }
 }
 
@@ -1450,5 +1546,46 @@ hr {
 
     .sidebar {
         padding: 14px 25px;
+    }
+}
+
+@media(max-height: 815px) {
+    .sidebar .top .menu {
+        overflow: scroll;
+        height: 450px;
+        margin-top: 20px;
+    }
+
+    .sidebar .top .menu li {
+        width: 96%;
+    }
+}
+
+@media(max-height: 770px) and (min-width: 500px)  {
+    .modal-dialog.active {
+        top: 30px;
+    }
+}
+
+@media(max-height: 735px) {
+    .sidebar .top .menu {
+        height: 360px;
+    }
+
+    .sidebar .top .menu li {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media(max-height: 700px) and (min-width: 500px) {
+    .modal-dialog.active {
+        top: 0;
+    }
+}
+
+@media(max-height: 650px) {
+    .sidebar .top .menu {
+        height: 290px;
     }
 }
