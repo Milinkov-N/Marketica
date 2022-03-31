@@ -113,20 +113,17 @@ $(document).ready(function(){
       }
   });
 
-  document.getElementById('usertel').addEventListener('input', function (e) {
-    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-  });
+  const userTelEl = document.getElementById('usertel')
+  const userTelElCareer = document.getElementById('usertel_career')
+  const userTelElTender = document.getElementById('usertel_career')
+  
+  const maskOptions = {
+    mask: '+{7} (000) 000-00-00'
+  }
 
-  document.getElementById('usertel_career').addEventListener('input', function (e) {
-    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-  });
-
-  document.getElementById('usertel_tender').addEventListener('input', function (e) {
-    var x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
-    e.target.value = !x[2] ? x[1] : x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
-  });
+  IMask(userTelEl, maskOptions)
+  IMask(userTelElCareer, maskOptions)
+  IMask(userTelElTender, maskOptions)
 
   const swiper = new Swiper('.swiper', {
     // Optional parameters
